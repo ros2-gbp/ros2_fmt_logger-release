@@ -1,0 +1,16 @@
+ros-kilted-ros2-fmt-logger (1.0.1-1bookworm) bookworm; urgency=high
+
+  * Using RCLCPP macros with the fmt_logger
+  * Add humble support
+  * Contributors: Tim Clephas
+
+ -- Tim Clephas <tim.clephas@nobleo.nl>  Sun, 12 Oct 2025 22:00:00 -0000
+
+ros-kilted-ros2-fmt-logger (1.0.0-1bookworm) bookworm; urgency=high
+
+  * Initial implementation for a proper ros2 logger using fmtlib
+  * Contributors: Tim Clephas
+
+ -- Tim Clephas <tim.clephas@nobleo.nl>  Tue, 07 Oct 2025 22:00:00 -0000
+
+
