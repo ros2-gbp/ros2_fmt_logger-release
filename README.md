@@ -8,7 +8,8 @@ A modern, ROS 2 logging library that provides fmt-style formatting as a replacem
 
 - Function calls instead of macros: `logger.info("Hello, {}!", name)` instead of `RCLCPP_INFO(logger, "Hello, %s", name.c_str())`
 - Additional `.on_change()` method for logging changes in values
-- chrono syntax for throttling: `logger.warn_throttle(1s, "Warning: {}", value)`
+- Chrono syntax for throttling: `logger.warn_throttle(1s, "Warning: {}", value)`
+- Backwards compatible with the macros, so easy to start using in existing projects without a full rewrite of the current log statements
 
 ## Examples
 
@@ -88,7 +89,7 @@ logger.info("Hello, {}!", name);
 logger.info("Processing {1} of {0} items", total, current);
 
 // Format specifiers
-logger.info("Progress: {:.1%}", progress);  // Percentage with 1 decimal
+logger.info("Progress: {:.1}%", progress);  // Percentage with 1 decimal
 logger.info("Value: {:08.2f}", value);     // Zero-padded floating point
 logger.info("Hex: {:#x}", number);         // Hexadecimal with 0x prefix
 
@@ -98,10 +99,18 @@ logger.info("Values: {}", std::vector{1, 2, 3, 4});
 
 See [demo_ros2_fmt_logger.cpp](demo/demo_ros2_fmt_logger.cpp) for more examples.
 
+## Alternatives
+
+- *[ros2_logging_fmt](https://github.com/facontidavide/ros2_logging_fmt)* similar idea, different implementation
+- *[rclcpp_logging](https://github.com/ros2/rclcpp/blob/rolling/rclcpp/include/rclcpp/logging.hpp)* official ROS 2 logging library
+- *[rosfmt](https://github.com/xqms/rosfmt)* ROS 1 package for fmt-style logging
+
 ## Credits
 
-![Nobleo Logo](https://nobleo-technology.nl/wp-content/uploads/2024/08/Nobleo_BG-paars_logo-wit-small.jpg)
+<!-- markdownlint-disable MD033 -->
+<img src="https://nobleo-technology.nl/wp-content/uploads/2024/08/Nobleo_BG-paars_logo-wit-small.jpg" alt="Nobleo Logo" width="300"/>
+<!-- markdownlint-enable MD033 -->
 
 This is a package developed by Nobleo Autonomous Solutions B.V.
 
-Looking for paid support options? Contact us at (<https://nobleo-technology.nl>).
+Looking for paid support options? Contact us at [nobleo-technology.nl](https://nobleo-technology.nl).
