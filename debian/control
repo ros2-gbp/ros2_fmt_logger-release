@@ -1,0 +1,12 @@
+Source: ros-humble-ros2-fmt-logger
+Section: misc
+Priority: optional
+Maintainer: Tim Clephas <tim.clephas@nobleo.nl>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-backward-ros, ros-humble-rclcpp, ros-humble-rcutils, ros-humble-ros-workspace
+Homepage: https://github.com/nobleo/ros2_fmt_logger
+Standards-Version: 3.9.2
+
+Package: ros-humble-ros2-fmt-logger
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-humble-backward-ros, ros-humble-rclcpp, ros-humble-rcutils, ros-humble-ros-workspace
+Description: A modern, ROS 2 logging library that provides fmt-style formatting as a replacement for RCLCPP logging macros
