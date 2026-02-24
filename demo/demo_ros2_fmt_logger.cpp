@@ -1,11 +1,12 @@
 // Copyright (C) 2025 Nobleo Autonomous Solutions B.V.
 
-#include <chrono>
+#include <chrono>  // IWYU pragma: keep
 #include <iostream>
 #include <rclcpp/node.hpp>
 #include <thread>
 
-#include "ros2_fmt_logger/ros2_fmt_logger.hpp"
+#include "ros2_fmt_logger/logger.hpp"
+#include "ros2_fmt_logger/rclcpp_formatters.hpp"  // IWYU pragma: keep
 
 using std::chrono_literals::operator""ms;
 
@@ -70,6 +71,17 @@ int main(int argc, char ** argv)
     fmt_logger.fatal_on_change(
       temperature, 10.0, "Temperature changed significantly (> 10.0): {:.1f}°C", temperature);
   }
+
+  // ROS types:
+  std::cout << "\nInfo with rclcpp::Duration and rclcpp::Time:" << std::endl;
+  rclcpp::Duration duration{800ms};
+  rclcpp::Time time = node->get_clock()->now();
+  fmt_logger.info("At {} I slept for {}", time, duration);
+
+  std::cout << "\nInfo with rclcpp::Rate:" << std::endl;
+  rclcpp::Rate rate{10.0};
+  rclcpp::WallRate wall_rate{1.0 / 3};
+  fmt_logger.info("Rate: {}, WallRate: {:.2}", rate, wall_rate);
 
   rclcpp::shutdown();
   return EXIT_SUCCESS;
