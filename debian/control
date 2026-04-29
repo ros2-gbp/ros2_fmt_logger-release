@@ -1,0 +1,12 @@
+Source: ros-lyrical-ros2-fmt-logger
+Section: misc
+Priority: optional
+Maintainer: Tim Clephas <tim.clephas@nobleo.nl>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, ros-lyrical-ament-cmake-auto, ros-lyrical-ament-cmake-gtest <!nocheck>, ros-lyrical-backward-ros, ros-lyrical-rclcpp, ros-lyrical-rcutils, ros-lyrical-ros-workspace
+Homepage: https://github.com/nobleo/ros2_fmt_logger
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-ros2-fmt-logger
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-lyrical-backward-ros, ros-lyrical-rclcpp, ros-lyrical-rcutils, ros-lyrical-ros-workspace
+Description: A modern, ROS 2 logging library that provides fmt-style formatting as a replacement for RCLCPP logging macros
