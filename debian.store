@@ -1,1 +1,1 @@
-{"base": "ed582efc9ec3", "parent": "debian/rolling/ros2_fmt_logger", "previous": "90a6e95b1c52", "trim": "", "trimbase": ""}
+{"base": "ea05ffac00e8", "parent": "debian/lyrical/ros2_fmt_logger", "previous": "8bdc8d2ed19a", "trim": "", "trimbase": ""}
